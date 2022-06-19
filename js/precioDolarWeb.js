@@ -1,6 +1,11 @@
 const apiDolar = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
 const tablaDolar = document.querySelector("#tablaDolar");
-const fecha = new Date().toLocaleDateString();
+const fecha = new Date();
+const dia =  String(fecha.getDate()).padStart(2, '0') + '/' + String(fecha.getMonth() + 1).padStart(2, '0')+ '/' + String(fecha.getFullYear() + 1).padStart(2, '0');
+const horas = String(fecha.getHours());
+const minutos = String(fecha.getMinutes());
+const segundos = String(fecha.getSeconds());
+
 function compra(valor) {
     if (valor == "No Cotiza") {
         return "---"
@@ -52,8 +57,8 @@ function traerPreciosDolar() {
                        $${compra(element.casa.venta)}
                     </div>
                 </div>
-                <div style="font-size:15px" class=""> Variación ${element.casa.variacion}</div>
-                <div style="font-size:10px" class="" > Actualización ${fecha}</div>
+                <div style="font-size:15px" class=""> Variación ${element.casa.variacion}%</div>
+                <div style="font-size:10px" class="" > Actualización <br> ${dia} ${horas}:${minutos}:${segundos}</div>
             </div>
                 ` );
         })
