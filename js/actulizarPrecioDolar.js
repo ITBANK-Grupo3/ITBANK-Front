@@ -1,3 +1,4 @@
+
 const URLDOLAR = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
 const tablaPrecios = document.querySelector("#tablaPrecioDolares");
 const fecha = new Date().toLocaleDateString();
@@ -37,6 +38,10 @@ function traerPreciosDolar() {
 				});
 		});
 }
+
+window.addEventListener("load", function(){
+  this.document.getElementById("loader").classList.toggle("loader2")
+})
 
 window.onload = () => {
 	traerPreciosDolar();
