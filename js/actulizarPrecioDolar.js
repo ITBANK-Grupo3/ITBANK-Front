@@ -1,7 +1,11 @@
 
 const URLDOLAR = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
 const tablaPrecios = document.querySelector("#tablaPrecioDolares");
-const fecha = new Date().toLocaleDateString();
+const fecha = new Date();
+const dia =  String(fecha.getDate()).padStart(2, '0') + '/' + String(fecha.getMonth() + 1).padStart(2, '0')+ '/' + String(fecha.getFullYear() + 1).padStart(2, '0');
+const horas = String(fecha.getHours());
+const minutos = String(fecha.getMinutes());
+const segundos = String(fecha.getSeconds());
 
 
 
@@ -34,8 +38,12 @@ function traerPreciosDolar() {
           </article>
         </section>
         <article class="dolar__precio--datos">
-          <h4 class="dolar__precio--dato">  VARIACION ${precio.casa.variacion}%</h4>
-        <h5 class="dolar__precio--dato">ACTUALIZADO: ${fecha}</h5>
+
+          <h4 class="dolar__precio--dato">VARIACION ${precio.casa.variacion}%</h4>
+        <h5 class="dolar__precio--dato ">ACTUALIZADO: <br> ${dia} ${horas}:${minutos}:${segundos}</h5>
+
+          
+
         </article>
       </section>
         `;
