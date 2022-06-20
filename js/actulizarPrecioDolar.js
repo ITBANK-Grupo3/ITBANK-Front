@@ -1,3 +1,4 @@
+
 const URLDOLAR = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
 const tablaPrecios = document.querySelector("#tablaPrecioDolares");
 const fecha = new Date();
@@ -5,6 +6,9 @@ const dia =  String(fecha.getDate()).padStart(2, '0') + '/' + String(fecha.getMo
 const horas = String(fecha.getHours());
 const minutos = String(fecha.getMinutes());
 const segundos = String(fecha.getSeconds());
+
+
+
 
 function traerPreciosDolar() {
 	fetch(URLDOLAR)
@@ -19,6 +23,7 @@ function traerPreciosDolar() {
 						precio.casa.variacion
 				)
 				.forEach((precio) => {
+          
 					tablaPrecios.innerHTML += `
         <section class="cuenta-info">      
         <h1 class="tipo__dolar">${precio.casa.nombre}</h1>
@@ -33,14 +38,22 @@ function traerPreciosDolar() {
           </article>
         </section>
         <article class="dolar__precio--datos">
+
           <h4 class="dolar__precio--dato">VARIACION ${precio.casa.variacion}%</h4>
         <h5 class="dolar__precio--dato ">ACTUALIZADO: <br> ${dia} ${horas}:${minutos}:${segundos}</h5>
+
+          
+
         </article>
       </section>
         `;
 				});
 		});
 }
+
+window.addEventListener("load", function(){
+  this.document.getElementById("loader").classList.toggle("loader2")
+})
 
 window.onload = () => {
 	traerPreciosDolar();
