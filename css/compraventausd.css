@@ -364,3 +364,33 @@ footer {
 	font-size: 13px;
 	font-weight: 600;
 }
+
+.cono-rojo {
+    width: 0px;
+    height: 0px;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-top: 10px solid red;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+	display: flex;
+	
+}
+
+.cono-verde{
+    width: 0px;
+    height: 0px;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    border-bottom: 10px solid rgb(34, 255, 0);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius:50%;
+	display: flex;
+	
+}
+
+.center{
+	text-align: center;
+}
