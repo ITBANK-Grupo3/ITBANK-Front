@@ -39,7 +39,7 @@ function traerPreciosDolar() {
             res.forEach(element =>
 
                 tablaDolar.innerHTML += `
-                <div class="col fw-bold p-0 m-1">
+                <div class="dolarcards col fw-bold p-0 m-1 border border-white rounded">
                     <div class="p-1 "> ${liqui(element.casa.nombre)}</div>
                     <div class="row fw-bold w-100 m-0" style="font-size:1rem">
                     <div class="col p-0">
@@ -48,18 +48,18 @@ function traerPreciosDolar() {
                     <div class="col p-0">
                         Venta
                     </div>
-                </div>
-                <div class="row fw-bold  w-100 m-0">
-                    <div class="col p-0">
-                       $${compra(element.casa.compra)}
                     </div>
-                    <div class="col p-0">
-                       $${compra(element.casa.venta)}
+                    <div class="row fw-bold  w-100 m-0">
+                        <div class="col p-0">
+                            $${compra(element.casa.compra)}
+                        </div>
+                        <div class="col p-0">
+                            $${compra(element.casa.venta)}
+                        </div>
                     </div>
+                    <div style="font-size:15px" class=""> Variación ${element.casa.variacion}%</div>
+                    <div style="font-size:10px" class="" > Actualización <br> ${dia} ${horas}:${minutos}:${segundos}</div>
                 </div>
-                <div style="font-size:15px" class=""> Variación ${element.casa.variacion}%</div>
-                <div style="font-size:10px" class="" > Actualización <br> ${dia} ${horas}:${minutos}:${segundos}</div>
-            </div>
                 ` );
         })
 }

@@ -45,8 +45,6 @@ body{
     color: white; 
     position: relative;
     
-    
-   
 }
 .dolar{
     background-color: rgb(220, 230, 233);
@@ -59,4 +57,9 @@ body{
 
 .card{
     height:300px
+}
+
+.dolarcards{
+    background-color: #b5cacf;
+    
 }
